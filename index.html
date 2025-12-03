@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
+        /* --- CSS VARIABLES (Easy to tweak colors here) --- */
         :root {
             --primary-color: #2c3e50; /* Hudson Slate */
             --accent-color: #27ae60;  /* Valley Green */
@@ -128,6 +129,10 @@
             border-radius: 4px;
             font-weight: 600;
             margin-top: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
         }
 
         .btn:hover {
@@ -264,6 +269,34 @@
             font-weight: 700;
         }
 
+        /* --- FORM STYLES --- */
+        .contact-form {
+            max-width: 400px;
+            margin: 30px auto 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-form input, 
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 0.95rem;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+        }
+
+        .contact-form button {
+            width: 100%;
+            margin-top: 5px;
+        }
+
         /* --- FOOTER --- */
         footer {
             background: #1e293b;
@@ -292,6 +325,7 @@
             .hero h1 { font-size: 2rem; }
             .portfolio-item { flex-direction: column; gap: 10px; }
             .nav-links { display: none; } /* Simplified for MVP: Hidden on mobile */
+            .contact-box { padding: 30px 20px; }
         }
     </style>
 </head>
@@ -419,14 +453,18 @@
                 <h2>Let's get your project funded (or finished).</h2>
                 <p style="margin: 20px 0;">I am currently accepting new clients for Q1 2026.<br>Based in Tivoli, NY. Available remotely worldwide.</p>
                 
-                <form action="https://api.web3forms.com/submit" method="POST">
+                <!-- Web3Forms Contact Form -->
+                <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                    <!-- Replace the access_key with your actual key if different -->
                     <input type="hidden" name="access_key" value="f6bba03a-4848-49c1-9cc4-081d59cccb84">
-                    <input type="text" name="name" required>
-                    <input type="email" name="email" required>
-                    <textarea name="message" required></textarea>
-                    <button type="submit">Submit Form</button>
-</form>
-                <a href="mailto:your-email@example.com" class="btn" style="background: white; color: var(--primary-color);">Email Me</a>
+                    
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email Address" required>
+                    <textarea name="message" rows="4" placeholder="How can I help you?" required></textarea>
+                    
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+
             </div>
         </div>
     </section>
@@ -436,7 +474,8 @@
         <div class="container">
             <p>&copy; 2025 Veronica Stork. All rights reserved.</p>
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/veewren/"><i class="fa-brands fa-linkedin"></i></a>
+                <!-- Replace # with your actual profile links -->
+                <a href="https://linkedin.com/in/veewren"><i class="fa-brands fa-linkedin"></i></a>
                 <a href="https://github.com/veronica-stork"><i class="fa-brands fa-github"></i></a>
             </div>
         </div>
