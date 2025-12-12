@@ -3,335 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Veronica Stork | Funding, Strategy, and Story</title>
+    <title>Veronica Stork | Technical Documentation Strategist</title>
     
-    <!-- Fonts: Merriweather (Serif for Story) and Inter (Sans for Tech) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Merriweather:ital,wght@0,300;0,700;1,400&display=swap" rel="stylesheet">
     
-    <!-- Icons (FontAwesome) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <style>
-        /* --- CSS VARIABLES (Easy to tweak colors here) --- */
-        :root {
-            --primary-color: #2c3e50; /* Hudson Slate */
-            --accent-color: #27ae60;  /* Valley Green */
-            --bg-color: #f8fafc;      /* Clean Paper */
-            --text-color: #334155;    /* Dark Grey */
-            --light-grey: #e2e8f0;
-            --white: #ffffff;
-        }
-
-        /* --- RESET & BASE STYLES --- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            line-height: 1.6;
-        }
-
-        h1, h2, h3 {
-            font-family: 'Merriweather', serif;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        a {
-            text-decoration: none;
-            color: var(--accent-color);
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: var(--primary-color);
-        }
-
-        /* --- LAYOUT UTILITIES --- */
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        section {
-            padding: 80px 0;
-        }
-
-        /* --- NAVIGATION --- */
-        nav {
-            background: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            padding: 1rem 0;
-        }
-
-        .nav-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: var(--primary-color);
-            letter-spacing: -0.5px;
-        }
-
-        .nav-links a {
-            margin-left: 2rem;
-            font-size: 0.9rem;
-            color: var(--text-color);
-            font-weight: 500;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-color);
-        }
-
-        /* --- HERO SECTION --- */
-        .hero {
-            background-color: var(--primary-color);
-            color: var(--white);
-            text-align: center;
-            padding: 120px 20px;
-        }
-
-        .hero h1 {
-            color: var(--white);
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 2rem auto;
-            opacity: 0.9;
-            font-weight: 300;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: var(--white);
-            padding: 12px 30px;
-            border-radius: 4px;
-            font-weight: 600;
-            margin-top: 10px;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .btn:hover {
-            background-color: #219150;
-            color: var(--white);
-            transform: translateY(-2px);
-        }
-
-        /* --- TRUST BAR --- */
-        .trust-bar {
-            background: var(--white);
-            padding: 30px 0;
-            border-bottom: 1px solid var(--light-grey);
-            text-align: center;
-        }
-        
-        .trust-text {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #888;
-            margin-bottom: 15px;
-        }
-
-        .trust-logos {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 40px;
-            font-weight: 700;
-            color: #94a3b8;
-            font-size: 1.2rem;
-        }
-
-        /* --- ABOUT SECTION --- */
-        .about-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .bio-text {
-            max-width: 700px;
-        }
-
-        .bio-highlight {
-            font-style: italic;
-            font-size: 1.1rem;
-            color: var(--primary-color);
-            margin: 20px 0;
-            border-left: 3px solid var(--accent-color);
-            padding-left: 20px;
-            text-align: left;
-        }
-
-        /* --- SERVICES GRID --- */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .service-card {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: transform 0.2s;
-            border-top: 4px solid var(--accent-color);
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .service-card h3 {
-            font-size: 1.4rem;
-        }
-
-        .service-tag {
-            display: inline-block;
-            font-size: 0.8rem;
-            background: #eef2f6;
-            padding: 4px 8px;
-            border-radius: 4px;
-            color: #64748b;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            font-weight: 600;
-        }
-
-        /* --- PORTFOLIO --- */
-        #portfolio {
-            background-color: var(--white);
-        }
-
-        .portfolio-item {
-            display: flex;
-            border-bottom: 1px solid var(--light-grey);
-            padding: 30px 0;
-        }
-        
-        .portfolio-item:last-child {
-            border-bottom: none;
-        }
-
-        .project-title {
-            flex: 1;
-            font-weight: 700;
-            color: var(--primary-color);
-        }
-
-        .project-desc {
-            flex: 2;
-        }
-
-        /* --- CONTACT --- */
-        .contact-box {
-            background: var(--primary-color);
-            color: var(--white);
-            padding: 50px;
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .contact-box h2 {
-            color: var(--white);
-        }
-
-        .contact-box a {
-            color: var(--accent-color);
-            font-weight: 700;
-        }
-
-        /* --- FORM STYLES --- */
-        .contact-form {
-            max-width: 400px;
-            margin: 30px auto 0;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .contact-form input, 
-        .contact-form textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border: none;
-            border-radius: 4px;
-            font-family: inherit;
-            font-size: 0.95rem;
-        }
-
-        .contact-form textarea {
-            resize: vertical;
-        }
-
-        .contact-form button {
-            width: 100%;
-            margin-top: 5px;
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            background: #1e293b;
-            color: #94a3b8;
-            padding: 40px 0;
-            text-align: center;
-            font-size: 0.9rem;
-        }
-
-        .social-links {
-            margin-top: 15px;
-        }
-
-        .social-links a {
-            color: #94a3b8;
-            margin: 0 10px;
-            font-size: 1.2rem;
-        }
-
-        .social-links a:hover {
-            color: var(--white);
-        }
-
-        /* --- MOBILE TWEAKS --- */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .portfolio-item { flex-direction: column; gap: 10px; }
-            .nav-links { display: none; } /* Simplified for MVP: Hidden on mobile */
-            .contact-box { padding: 30px 20px; }
-        }
-    </style>
 </head>
+
 <body>
 
-    <!-- NAVIGATION -->
     <nav>
         <div class="container nav-content">
             <div class="logo">Veronica Stork</div>
@@ -344,137 +27,150 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
     <header class="hero" id="home">
         <div class="container">
-            <h1>Funding, Strategy, and Story.</h1>
-            <p>I help Hudson Valley non-profits and small businesses secure grants, build better websites, and tell the stories that matter.</p>
-            <a href="#contact" class="btn">Work With Me</a>
+            <h1>Technical Documentation Strategist for Deep Tech & Engineering Teams.</h1>
+            <p>I help startups scale developer adoption with <strong>world-class documentation</strong> and secure non-dilutive funding with <strong>technical grant proposals.</strong></p>
+            <a href="#contact" class="btn">View Technical Portfolio</a>
         </div>
     </header>
 
-    <!-- TRUST BAR (Logos/Names) -->
     <div class="trust-bar">
         <div class="container">
-            <p class="trust-text">Experience With</p>
+            <p class="trust-text">Technical Writing Featured In</p>
             <div class="trust-logos">
                 <span>Sitecore</span>
                 <span>•</span>
+                <span>Amadeus for Developers</span>
+                <span>•</span>
+                <span>FreeCodeCamp</span>
+                <span>•</span>
                 <span>Draft.dev</span>
                 <span>•</span>
-                <span>Livingston Free Library</span>
-                <span>•</span>
-                <span>Village of Tivoli</span>
+                <span>Strapi</span>
             </div>
         </div>
     </div>
 
-    <!-- ABOUT SECTION -->
     <section id="about">
         <div class="container about-content">
-            <h2>The Tech-Savvy Librarian</h2>
+            <h2>The Bridge Between Code & Content</h2>
             <div class="bio-text">
-                <p>You shouldn't have to hire a grant writer, a web developer, and a copywriter just to launch one project.</p>
+                <p>Your engineers are brilliant, but if your users can't understand the documentation, your product doesn't exist.</p>
                 
                 <div class="bio-highlight">
-                    I combine a background in <strong>Non-Profit Leadership</strong> with <strong>Enterprise Technical Writing</strong>. I specialize in the intersection of technical complexity and human connection.
+                    I combine a <strong>Computer Science background</strong> with <strong>Library Science organization</strong> to turn complex technical chaos into clear, structured knowledge.
                 </div>
 
-                <p>Whether you need to secure funding for a community initiative or explain a complex software product to your users, I bridge the gap.</p>
+                <p>Unlike generalist writers, I can read your codebase, test your API endpoints, and document your SDKs from the inside out. I don't just fix typos; I reduce technical debt.</p>
                 <br>
-                <p><strong>My Background:</strong></p>
+                <p><strong>Core Competencies:</strong></p>
                 <ul style="list-style: none; margin-top: 10px; line-height: 2;">
-                    <li><i class="fa-solid fa-server" style="color: var(--accent-color); margin-right: 8px;"></i> Enterprise Tech Writer (Sitecore Search)</li>
-                    <li><i class="fa-solid fa-book-open" style="color: var(--accent-color); margin-right: 8px;"></i> Director, Livingston Free Library</li>
-                    <li><i class="fa-solid fa-graduation-cap" style="color: var(--accent-color); margin-right: 8px;"></i> Master of Library & Information Science (MLIS)</li>
+                    <li><i class="fa-solid fa-code" style="color: var(--accent-color); margin-right: 8px;"></i> <strong>Languages:</strong> JavaScript, React, Node.js, SQL, Python</li>
+                    <li><i class="fa-solid fa-book-open" style="color: var(--accent-color); margin-right: 8px;"></i> <strong>Docs-as-Code:</strong> Markdown, Git, Static Site Generators</li>
+                    <li><i class="fa-solid fa-file-contract" style="color: var(--accent-color); margin-right: 8px;"></i> <strong>Strategy:</strong> SBIR/STTR Proposals & Information Architecture</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- SERVICES SECTION -->
     <section id="services" style="background-color: #fff;">
         <div class="container">
-            <h2 style="text-align: center;">How I Can Help</h2>
+            <h2 style="text-align: center;">Strategic Services</h2>
             <div class="services-grid">
                 
-                <!-- Service 1 -->
                 <div class="service-card">
-                    <span class="service-tag">For Non-Profits</span>
-                    <h3>Grant Writing & Strategy</h3>
-                    <p>I don't just fill out forms; I craft narratives that win funding. From identifying the right opportunities to managing the reporting, I handle the bureaucracy so you can focus on the work.</p>
+                    <span class="service-tag">For Engineering Teams</span>
+                    <h3>SDK & API Documentation</h3>
+                    <p>End-to-end authoring for developer tools. I create "Zero to Hello World" guides, API references, and architecture overviews that reduce support tickets and accelerate adoption.</p>
                 </div>
 
-                <!-- Service 2 -->
                 <div class="service-card">
-                    <span class="service-tag">For Small Business</span>
-                    <h3>Web Design & Content</h3>
-                    <p>A beautiful website is useless if the words don't sell. I build clean, accessible, fast websites and write the copy that goes on them. One-stop site refreshes and SEO-friendly strategy.</p>
+                    <span class="service-tag">For R&D Founders</span>
+                    <h3>Technical Grant Strategy</h3>
+                    <p>Secure non-dilutive funding (SBIR, STTR) without losing equity. I translate your complex R&D roadmap into compliant, persuasive narratives for government reviewers.</p>
                 </div>
 
-                <!-- Service 3 -->
                 <div class="service-card">
-                    <span class="service-tag">For Tech Companies</span>
-                    <h3>Technical Writing</h3>
-                    <p>I translate developer-speak into human-speak. Specializing in API documentation, user guides, and "tech-adjacent" strategic content for startups.</p>
+                    <span class="service-tag">For Enterprise</span>
+                    <h3>Knowledge Architecture</h3>
+                    <p>Internal documentation audit and restructuring. I clean up the "Confluence mess," organize engineering wikis, and build sustainable content strategies for growing teams.</p>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- PORTFOLIO SECTION -->
     <section id="portfolio">
         <div class="container">
-            <h2>Selected Wins</h2>
+            <h2>Selected Technical Projects</h2>
             
             <div class="portfolio-item">
-                <div class="project-title">Village of Tivoli</div>
-                <div class="project-desc">Secured grant funding for the planting of village trees and the annual Arbor Day celebration. Managed the proposal narrative and compliance reporting.</div>
+                <div class="project-title">
+                    <a href="https://developers.amadeus.com/blog/building-an-ai-powered-travel-agent-with-the-amadeus-for-developers-travel-apis-part-1" target="_blank">
+                        Building an AI-Powered Travel Agent <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7em;"></i>
+                    </a>
+                </div>
+                <div class="project-desc">
+                    <strong>Client: Amadeus for Developers</strong><br>
+                    A full-stack technical tutorial demonstrating how to integrate Amadeus APIs with OpenAI to build a functional travel assistant.
+                    <br><em>Stack: Python, JavaScript, APIs.</em>
+                </div>
             </div>
 
             <div class="portfolio-item">
-                <div class="project-title">Sitecore (Search)</div>
-                <div class="project-desc">Authored technical documentation for <strong>Sitecore Search</strong>, translating complex AI-driven search concepts and API integrations for developer audiences.</div>
+                <div class="project-title">
+                    <a href="https://www.appsmith.com/blog/the-complete-table-widget-building-complex-tables-with-appsmith" target="_blank">
+                        Complex Table Widgets in React <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7em;"></i>
+                    </a>
+                </div>
+                <div class="project-desc">
+                    <strong>Client: Appsmith</strong><br>
+                    A deep-dive engineering guide on building sortable, paginated data tables using React and Next.js.
+                    <br><em>Stack: React, Next.js, CSS.</em>
+                </div>
             </div>
 
             <div class="portfolio-item">
-                <div class="project-title">Livingston Free Library</div>
-                <div class="project-desc">Managed daily operations and secured grant funding for community programming initiatives, bridging the gap between municipal requirements and community needs.</div>
+                <div class="project-title">
+                    <a href="https://strapi.io/blog/building-a-css-tricks-website-clone-with-strapi-next-js" target="_blank">
+                        Full-Stack Clone with Next.js & Strapi <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7em;"></i>
+                    </a>
+                </div>
+                <div class="project-desc">
+                    <strong>Client: Strapi</strong><br>
+                    Tutorial on building a CSS-Tricks clone, focusing on headless CMS architecture and frontend integration.
+                    <br><em>Stack: Next.js, Headless CMS.</em>
+                </div>
             </div>
 
         </div>
     </section>
 
-    <!-- CONTACT SECTION -->
     <section id="contact">
         <div class="container">
             <div class="contact-box">
-                <h2>Let's get your project funded (or finished).</h2>
-                <p style="margin: 20px 0;">I am currently accepting new clients for Q1 2026.<br>Based in Tivoli, NY. Available remotely worldwide.</p>
+                <h2>Ready to scale your documentation?</h2>
+                <p style="margin: 20px 0;">Currently accepting technical contracts for Q1 2026.<br>Specializing in Quantum, AI, and DevTools.</p>
                 
-                <!-- Web3Forms Contact Form -->
                 <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
-                    <!-- Replace the access_key with your actual key if different -->
                     <input type="hidden" name="access_key" value="f6bba03a-4848-49c1-9cc4-081d59cccb84">
                     
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email Address" required>
-                    <textarea name="message" rows="4" placeholder="How can I help you?" required></textarea>
+                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="email" name="email" placeholder="Work Email" required>
+                    <textarea name="message" rows="4" placeholder="Tell me about your documentation or grant needs..." required></textarea>
                     
-                    <button type="submit" class="btn">Send Message</button>
+                    <button type="submit" class="btn">Request Consultation</button>
                 </form>
 
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
         <div class="container">
             <p>&copy; 2025 Veronica Stork. All rights reserved.</p>
             <div class="social-links">
-                <!-- Replace # with your actual profile links -->
                 <a href="https://linkedin.com/in/veewren"><i class="fa-brands fa-linkedin"></i></a>
                 <a href="https://github.com/veronica-stork"><i class="fa-brands fa-github"></i></a>
             </div>
